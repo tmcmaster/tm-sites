@@ -1,6 +1,6 @@
 {
     "name": "@wonkytech/tm-sites",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "This is a template for creating new web component repositories.",
     "author": "Tim McMaster",
     "homepage": "https://tmcmaster.github.io/tm-sites",
