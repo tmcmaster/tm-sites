@@ -5,6 +5,6 @@
     },
     "dependencies": {
         "@wonkytech/tm-sites": "^0.0.4",
-        "@wonkytech/tm-examples": "^0.0.12"
+        "@wonkytech/tm-examples": "^0.0.13"
     }
 }

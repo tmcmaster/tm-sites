@@ -21,9 +21,12 @@ let sites4 = {
 render(html`
     <style>
         body {
-          background-color: white;
-          padding: 0;
-          margin: 0;
+            padding: 0;
+            margin: 0;
+            left:0;
+            top:0;
+            width: 100vw;
+            height: 100vh;  
         } 
     </style>
     <tm-examples heading="tm-sites" .sites="${sites4}">

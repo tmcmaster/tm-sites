@@ -61309,6 +61309,9 @@ window.customElements.define('tm-examples', class extends LitElement {
       },
       sites: {
         type: Object
+      },
+      author: {
+        type: Object
       }
     };
   }
@@ -61317,7 +61320,15 @@ window.customElements.define('tm-examples', class extends LitElement {
     super();
     this.heading = '';
     this.source = 'main.js';
-    this.sites = {};
+    this.sites = {}; // TODO: need to sort out making author details configurable
+
+    this.author = {
+      'site': 'htts://tim.mcmaster.id.au',
+      'src': 'https://github.com/tmcmaster',
+      'pika': 'https://www.pika.dev/search?q=%40wonkytech',
+      'npm': 'https://www.npmjs.com/search?q=%40wonkytech',
+      'docs': 'https://wonkytech.net'
+    };
   } // noinspection JSUnusedGlobalSymbols
 
 
@@ -61401,15 +61412,20 @@ window.customElements.define('tm-examples', class extends LitElement {
                 flex-direction: row;
                 justify-content: center;
                 background: var(--tm-demo-background, inherit);
-                //border: solid green 2px;
+                //border: solid gray 2px;
                 box-sizing: border-box;
                 padding: 10px;
                 width: 100%;
+                height: 100%;
                 --tm-example-icon-size: 32px;
+                padding: 20px;
             }
 
             article {
                 min-width: 500px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
             }
 
             h1 {
@@ -61435,6 +61451,17 @@ window.customElements.define('tm-examples', class extends LitElement {
                 width: 100%;
                 margin-bottom: 20px;
             }
+            header {
+            }
+            main {
+                flex-grow: 1;
+                //border: solid blue 1px;
+                overflow: scroll;
+            }
+            footer {
+                //border: solid red 1px;
+                max-height: 25px;
+            }
         `;
   } // noinspection JSUnusedGlobalSymbols
 
@@ -61443,17 +61470,26 @@ window.customElements.define('tm-examples', class extends LitElement {
     return html$1`
             
             <article>
-                <h1>${this.heading}</h1>
-                ${Object.keys(this.sites).length === 0 ? "" : html$1`
-                    <tm-sites .sites="${this.sites}"></tm-sites>
-                `}
-                <hr/>
-                <nav>
-                    <vaadin-tabs id="tabs"></vaadin-tabs>
-                </nav>
+                <header>
+                    <h1>${this.heading}</h1>
+                    ${Object.keys(this.sites).length === 0 ? "" : html$1`
+                        <tm-sites .sites="${this.sites}"></tm-sites>
+                    `}
+                    <hr/>                
+                    <nav>
+                        <vaadin-tabs id="tabs"></vaadin-tabs>
+                    </nav>
+                </header>
+
                 <main>
                     <slot id="slot"></slot>
                 </main>
+                <footer>
+                    <tm-sites .sites="${this.author}">
+                        <span slot="left">Tim McMaster</span>
+                        <span slot="right">tim@mcmaster.id.au</span>
+                    </tm-sites>
+                </footer>
             </article>
 
             <tm-demo-source id="ddd"></tm-demo-source>
