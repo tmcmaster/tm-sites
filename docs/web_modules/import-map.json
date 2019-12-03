@@ -1,5 +1,6 @@
 {
   "imports": {
-    "@wonkytech/tm-sites": "./@wonkytech/tm-sites.js"
+    "@wonkytech/tm-sites": "./@wonkytech/tm-sites.js",
+    "@wonkytech/tm-examples": "./@wonkytech/tm-examples.js"
   }
 }
