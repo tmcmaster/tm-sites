@@ -1,1 +1,1 @@
-import './template-web-component.js'
+import './tm-sites.js'

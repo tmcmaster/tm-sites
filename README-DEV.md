@@ -7,9 +7,9 @@ When the project is first created, an initial version of the library needs to be
 ### Publish
 
 ```bash
-for i in `grep -rl 'template-web-component' *`;
+for i in `grep -rl 'tm-sites' *`;
 do 
-    perl -spi -e 's/template-web-component/new-component-name/g' $i; 
+    perl -spi -e 's/tm-sites/new-component-name/g' $i; 
 done
 npm run publish
 ```

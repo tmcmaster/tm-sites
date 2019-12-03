@@ -1,2 +1,2 @@
-import './web_modules/@wonkytech/template-web-component.js';
+import './web_modules/@wonkytech/tm-sites.js';
 import './main.js';

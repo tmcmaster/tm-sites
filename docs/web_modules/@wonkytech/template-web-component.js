@@ -2381,7 +2381,7 @@ LitElement['finalized'] = true;
  */
 LitElement.render = render$1;
 
-window.customElements.define('template-web-component', class extends LitElement {
+window.customElements.define('tm-sites', class extends LitElement {
   // noinspection JSUnusedGlobalSymbols
   static get properties() {
     return {
