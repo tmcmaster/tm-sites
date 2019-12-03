@@ -21,6 +21,7 @@ window.customElements.define('tm-sites', class extends LitElement {
             :host {
                 display: flex;
                 flex-direction: row;
+                //justify-content: center;
                 align-items: center;
                 --tm-example-icon-size: 24px;
             }
@@ -60,6 +61,10 @@ window.customElements.define('tm-sites', class extends LitElement {
             }
             .left,.right {
                 flex: 1;
+            }
+            
+            .right ::slotted(*) {
+                float: right;
             }
         `;
   } // noinspection JSUnusedGlobalSymbols

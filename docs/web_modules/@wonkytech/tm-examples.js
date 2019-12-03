@@ -1,5 +1,5 @@
 import { d as directive, A as AttributePart, P as PropertyPart, q as query, p as property, c as css, a as customElement, e as eventOptions, h as html$1, L as LitElement, n as noChange, N as NodePart, t as templateFactory } from '../common/lit-element-54503d46.js';
-//import './tm-sites.js';
+import './tm-sites.js';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -21929,7 +21929,7 @@ function createTemplatizerClass(template, templateInfo, options) {
 /**
  * Adds propagate effects from the template to the template instance for
  * properties that the host binds to the template using the `_host_` prefix.
- *
+ * 
  * @suppress {missingProperties} class.prototype is not defined for some reason
  */
 function addPropagateEffects(template, templateInfo, options) {
@@ -61326,16 +61326,14 @@ window.customElements.define('tm-examples', class extends LitElement {
     this.tabs = this.shadowRoot.querySelector('#tabs');
     this.sections = this.shadowRoot.querySelector('#slot').assignedNodes().filter(node => node.nodeName === "SECTION");
     fetchSource(getSourcePath(this.source)).then(source => {
-      this.sourceList = parseSectionSource(source);
-      console.log('------', sourceList);
-    }).catch(error => {
-      console.log('------', error);
+      this.sourceList = parseSectionSource(source); //console.log('------', sourceList);
+    }).catch(error => {//console.log('------', error);
     });
     const {
       tabs,
       sections
-    } = this;
-    console.log('Sections: ', sections);
+    } = this; //console.log('Sections: ', sections);
+
     sections.forEach((section, index) => {
       const title = section.getAttribute('title');
       const heading = document.createElement('h3');
@@ -61367,7 +61365,7 @@ window.customElements.define('tm-examples', class extends LitElement {
       });
       const scripts = Array.from(section.childNodes).filter(node => node.tagName === 'SCRIPT');
       scripts.forEach(script => {
-        console.log('Cloning script: ', script.innerText);
+        //console.log('Cloning script: ', script.innerText);
         let clone = document.createElement('script');
         clone.innerText = script.innerText;
         document.head.appendChild(clone);
