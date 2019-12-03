@@ -62,6 +62,10 @@ window.customElements.define('tm-sites', class extends LitElement {
             .left,.right {
                 flex: 1;
             }
+            
+            .right ::slotted(*) {
+                float: right;
+            }
         `;
     }
 

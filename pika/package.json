@@ -4,7 +4,7 @@
         "build": "npm install && npm run web"
     },
     "dependencies": {
-        "@wonkytech/tm-sites": "^0.0.2",
-        "@wonkytech/tm-examples": "^0.0.10"
+        "@wonkytech/tm-sites": "^0.0.3",
+        "@wonkytech/tm-examples": "^0.0.11"
     }
 }
