@@ -1,0 +1,51 @@
+{
+    "name": "@wonkytech/template-web-component",
+    "version": "0.0.3",
+    "description": "This is a template for creating new web component repositories.",
+    "author": "Tim McMaster",
+    "homepage": "https://tmcmaster.github.io/template-web-component",
+    "license": "MIT",
+    "repository": "https://github.com/tmcmaster/template-web-component",
+    "pika": true,
+    "sideEffects": true,
+    "@pika/pack": {
+        "pipeline": [
+            [
+                "@pika/plugin-standard-pkg"
+            ],
+            [
+                "@pika/plugin-build-node"
+            ],
+            [
+                "@pika/plugin-build-web"
+            ]
+        ]
+    },
+    "scripts": {
+        "build": "pika build",
+        "version": "npm run build",
+        "publish": "pika publish",
+        "demo": "owc-dev-server",
+        "demo:open": "owc-dev-server --open demo",
+        "docs:clear": "rm -rf docs/web_modules",
+        "docs:install": "npm install && npx @pika/web --dest docs/web_modules",
+        "docs:pika": "(cd pika; npm run build)",
+        "build:docs": "npm run docs:clear && npm run docs:install && npm run docs:pika",
+        "docs": "http-server docs",
+        "docs:open": "http-server --open docs"
+    },
+    "dependencies": {
+        "lit-element": "^2.0.1",
+        "lit-html": "^1.0.0"
+    },
+    "devDependencies": {
+        "@pika/pack": "^0.5.0",
+        "@pika/plugin-build-node": "^0.6.1",
+        "@pika/plugin-build-types": "^0.6.1",
+        "@pika/plugin-build-web": "^0.6.1",
+        "@pika/plugin-standard-pkg": "^0.6.1",
+        "@pika/types": "^0.6.1",
+        "@pika/web": "^0.6.1",
+        "owc-dev-server": "^0.3.0"
+    }
+}

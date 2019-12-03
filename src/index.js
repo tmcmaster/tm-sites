@@ -1,0 +1,1 @@
+import './template-web-component.js'
